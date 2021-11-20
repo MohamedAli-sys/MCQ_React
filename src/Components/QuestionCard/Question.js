@@ -16,12 +16,12 @@ export default function Question({ handle, dataSet, counter }) {
     const quest = (e) => {
         setChecker({ e })
     }
-    const { log, setLog } = useContext(IsLoggedIn)
+    const { log } = useContext(IsLoggedIn)
     const navigate = useNavigate()
 
     useEffect(() => {
         if (log === false) navigate('/Login')
-        window.history.pushState(setLog(false), null, null)
+        window.history.pushState(null, null, null)
     }, [])
     return (
         <>

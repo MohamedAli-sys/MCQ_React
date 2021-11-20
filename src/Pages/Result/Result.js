@@ -8,13 +8,13 @@ import { Results } from '../../Services/Result'
 
 export default function Result() {
     const { res } = useContext(Results)
-    const { log, setLog } = useContext(IsLoggedIn)
+    const { log } = useContext(IsLoggedIn)
     const navigate = useNavigate()
 
     useEffect(() => {
         console.log(res);
         if (log === false) navigate('/Login')
-        window.history.pushState(setLog(false), null, null)
+        window.history.pushState(null, null, null)
     }, [])
     let result = Math.floor(res.count / 7 * 100)
     return (

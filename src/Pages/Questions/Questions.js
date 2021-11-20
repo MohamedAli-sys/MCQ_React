@@ -18,7 +18,7 @@ export default function Questions() {
     useEffect(() => {
         setRes({ count: 0, answered: true })
         if (log === false) nav('/Login')
-        window.history.pushState(setLog(false), null, null)
+        window.history.pushState(null, null, null)
     }, [])
     const handleQuestion = (a) => {
         if (a.e.isCorrect) {
