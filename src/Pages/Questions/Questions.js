@@ -14,10 +14,11 @@ export default function Questions() {
         current: 0,
         Quest: Quest,
     })
-    const { log } = useContext(IsLoggedIn)
+    const { log, setLog } = useContext(IsLoggedIn)
     useEffect(() => {
+        setRes({ count: 0, answered: true })
         if (log === false) nav('/Login')
-        window.history.pushState(null, null)
+        window.history.pushState(setLog(false), null, null)
     }, [])
     const handleQuestion = (a) => {
         if (a.e.isCorrect) {
@@ -27,6 +28,7 @@ export default function Questions() {
             setConfig({ ...config, current: config.current + 1 })
             setRes({ ...res, answered: false })
         } else {
+            setRes({ ...res })
             nav('/Result')
         }
     }

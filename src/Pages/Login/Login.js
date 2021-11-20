@@ -10,7 +10,7 @@ export default function Login() {
     const navigate = useNavigate()
     useEffect(() => {
         if (log === true) navigate('/Exam')
-        window.history.pushState(null, null)
+        window.history.pushState(setLog(false), null, null)
     }, [])
     const [login, setLogin] = useState({
         name: "",
