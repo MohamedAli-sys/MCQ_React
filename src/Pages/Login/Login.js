@@ -10,6 +10,7 @@ export default function Login() {
     const navigate = useNavigate()
     useEffect(() => {
         if (log === true) navigate('/Exam')
+        window.history.pushState(null, null)
     }, [])
     const [login, setLogin] = useState({
         name: "",
@@ -85,7 +86,7 @@ export default function Login() {
         <>
             <Container sx={{
                 margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center",
-                minHeight: "100vh"
+                minHeight: "100vh", textAlign: "center"
             }}>
                 <Card>
                     <h1>Login</h1>

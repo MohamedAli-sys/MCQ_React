@@ -1,4 +1,5 @@
 import { AppBar, Button, Container, IconButton, Toolbar, Typography } from '@mui/material'
+import './Header.css'
 import { Box } from '@mui/system'
 import React from 'react'
 
@@ -18,9 +19,11 @@ export function Header() {
                             >
                             </IconButton>
                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                News
+                                MCQ
                             </Typography>
-                            <Button color="inherit">Logout</Button>
+                            <Button color="inherit">
+                                <a href="logout">Logout</a>
+                            </Button>
                         </Toolbar>
                     </Container>
                 </AppBar>
